@@ -20,8 +20,8 @@ let WebSocket = null;
 try{
 	WebSocket = require('uws');
 }catch(e){
-	ts.log('Fallback to sock');
-	WebSocket = require('sock');
+	ts.log('Fallback to ws');
+	WebSocket = require('ws');
 }
 
 function AbvNode(opt)
@@ -66,7 +66,7 @@ function AbvNode(opt)
 
 	const timer = setInterval(() => {
 		$clients.forEach((client) => {
-			if (!client.sock) return client.close();;
+			if (!client.sock) return client.close();
 			if (client.sock.isAlive === false) return client.close();
 
 			client.sock.isAlive = false;
