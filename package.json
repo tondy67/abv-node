@@ -1,6 +1,6 @@
 {
   "name": "abv-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Abvos node server",
   "engines": {
     "node": ">=6.11.3"
@@ -10,12 +10,9 @@
     "test": "node test/server.js"
   },
   "dependencies": {
-    "ws": "^3.0.0",
-    "uws": "^8.14.0",
-    "bufferutil": "^3.0.2",
-    "utf-8-validate": "^3.0.3",
-    "abv-ts": "tondy67/abv-ts",
-    "abv-socket": "tondy67/abv-socket"
+    "abv-socket": "0.0.2",
+    "abv-vfs": "0.0.1",
+    "abv-ts": "0.0.2"
   },
   "repository": {
     "type": "git",
@@ -29,12 +26,16 @@
   ],
   "author": {
     "name": "Todor Angelov",
-    "email": "abv@tondy.org",
+    "email": "abv@tondy.com",
     "url": "http://tondy.com"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tondy67/abv-node/issues"
   },
-  "homepage": "https://github.com/tondy67/abv-node#readme"
+  "homepage": "https://github.com/tondy67/abv-node#readme",
+  "devDependencies": {
+    "uws": "^9.14.0",
+    "ws": "^4.0.0"
+  }
 }

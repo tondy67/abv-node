@@ -1,7 +1,8 @@
 /**
  * 
  */
-const abv = require('../index.js');
+const ts = require('abv-ts')('abv:node');
+const AbvNode = require('../index.js');
 
 const http = require('http') ; 
 const port = 8080;
@@ -18,4 +19,13 @@ server.listen(port, function(err) {
 	console.log('Abv-node is running on port ' + port);
 });
 
-abv.node(5000);
+let WebSocket = null;
+
+try{
+	WebSocket = require('uws');
+}catch(e){
+	ts.log('Fallback to ws');
+	WebSocket = require('ws');
+}
+
+const node = new AbvNode(server,WebSocket);
